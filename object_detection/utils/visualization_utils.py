@@ -627,7 +627,7 @@ def visualize_boxes_and_labels_on_image_array(
     instance_boundaries=None,
     keypoints=None,
     use_normalized_coordinates=False,
-    max_boxes_to_draw=20,
+    max_boxes_to_draw=40,
     min_score_thresh=.5,
     agnostic_mode=False,
     line_thickness=4,
@@ -718,6 +718,7 @@ def visualize_boxes_and_labels_on_image_array(
   # Draw all boxes onto image.
   for box, color in box_to_color_map.items():
     ymin, xmin, ymax, xmax = box
+    # print([ymin,xmin,ymax,xmax])
     if instance_masks is not None:
       draw_mask_on_image_array(
           image,
